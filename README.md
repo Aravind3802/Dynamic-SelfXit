@@ -6,6 +6,8 @@ Based on this, we reimplement the SelfXit framework and extend it by adding a li
 
 To evaluate both these approaches, we integrate early exits into a CIFAR based ResNet—18 backbone. Overall, this work demonstrates that learned exit policies, using simple MLP can improve early exit networks and help us achieve low latency adaptive inference systems
 
+To setup the environment:(Mac/Linux)
+
 ```bash
 git clone https://github.com/<your-username>/DynamicSelfXit.git
 cd DynamicSelfXit
@@ -14,7 +16,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-To run a smoke test:
+To run a smoke test:(Mac/Linux)
 
 ```bash
 python3 -m SelfXit_Implementation.main \
