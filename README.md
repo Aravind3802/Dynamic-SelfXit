@@ -5,3 +5,26 @@ Early exit architectures address this problem by adding auxiliary classifiers to
 Based on this, we reimplement the SelfXit framework and extend it by adding a lightweight MLP that learns to predict exit decisions from a set of statistics that we get from each exit head. Instead of relying on confidence alone, the MLP will introduce features like softmax entropy and depth normalization indicators that provide a better characterization of prediction reliability and allows the gate to learn decision boundaries that improve exiting behavior.
 
 To evaluate both these approaches, we integrate early exits into a CIFAR based ResNet—18 backbone. Overall, this work demonstrates that learned exit policies, using simple MLP can improve early exit networks and help us achieve low latency adaptive inference systems
+
+```bash
+git clone https://github.com/<your-username>/DynamicSelfXit.git
+cd DynamicSelfXit
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+To run a smoke test:
+
+```bash
+python3 -m SelfXit_Implementation.main \
+    --dataset cifar10 \
+    --model resnet18 \
+    --epochs_backbone 0 \
+    --epochs_exits 1 \
+    --epochs_gates 1 \
+    --gate_max_batches 50 \
+    --policy both \
+    --num_workers 0
+```
+
