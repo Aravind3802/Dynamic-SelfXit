@@ -9,7 +9,7 @@ To evaluate both these approaches, we integrate early exits into a CIFAR based R
 To setup the environment:(Mac/Linux)
 
 ```bash
-git clone https://github.com/<your-username>/DynamicSelfXit.git
+git clone https://github.com/Aravind3802/DynamicSelfXit.git
 cd DynamicSelfXit
 python3 -m venv venv
 source venv/bin/activate
